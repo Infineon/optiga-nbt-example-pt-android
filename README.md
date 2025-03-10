@@ -1,13 +1,13 @@
 <!--
-SPDX-FileCopyrightText: 2024 Infineon Technologies AG
+SPDX-FileCopyrightText: Copyright (c) 2024-2025 Infineon Technologies AG
 SPDX-License-Identifier: MIT
 -->
 
 # OPTIGA™ Authenticate NBT PT Application for Android
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![REUSE Compliance Check](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/linting-test.yml/badge.svg?branch=main)](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/linting-test.yml)
-
+[![REUSE compliance check](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/linting-test.yml/badge.svg?branch=main)](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/linting-test.yml)
+[![Android build](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/android-build.yml/badge.svg?branch=main)](https://github.com/Infineon/optiga-nbt-example-pt-android/actions/workflows/android-build.yml)
 
 This is the *NBT Pass-Through (PT)* mobile phone app, a Java-based *Android Studio* project which showcases the OPTIGA™ Authenticate NBT in the *host parameterization via pass-through (PT)* use case.
 
@@ -34,13 +34,13 @@ Information on how to setup and use this example application to evaluate the OPT
 - NFC-enabled Android device running on API level 30 or higher (Android 11+)
 - [OPTIGA™ Authenticate NBT Development Kit](https://www.infineon.com/OPTIGA-Authenticate-NBT-Dev-Kit), consisting of:
   - [OPTIGA™ Authenticate NBT Development Shield](https://www.infineon.com/OPTIGA-Authenticate-NBT-Dev-Shield)
-  - [PSoC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439) as host microcontroller board
+  - [PSOC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439) as host microcontroller board
 - Associated example applications
   - *NBT Pass-Through* mobile phone app ([Android](https://github.com/Infineon/optiga-nbt-example-pt-android) **\*this application\*** or [iOS](https://github.com/Infineon/optiga-nbt-example-pt-ios))
     - Mobile phone example application for the *host parameterization via PT* use case
   - *NBT Pass-Through* embedded application ([ModusToolbox™](https://github.com/Infineon/mtb-example-optiga-nbt-pt))
     - Embedded example application for the *host parameterization via PT* use case
-    - Targets the [PSoC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439), included in the [OPTIGA™ Authenticate NBT Development Kit](https://www.infineon.com/OPTIGA-Authenticate-NBT-Dev-Kit)
+    - Targets the [PSOC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439), included in the [OPTIGA™ Authenticate NBT Development Kit](https://www.infineon.com/OPTIGA-Authenticate-NBT-Dev-Kit)
   - *NBT Personalization* mobile phone app ([Android](https://github.com/Infineon/optiga-nbt-example-perso-android) or [iOS](https://github.com/Infineon/optiga-nbt-example-perso-ios))
     - (Optional) Mobile phone example application for the *personalization of the OPTIGA™ Authenticate NBT via NFC*
     - To configure the OPTIGA™ Authenticate NBT for the desired use case or to reset it to its delivery condition
@@ -54,7 +54,7 @@ This project is shared to be loaded and compiled using *Android Studio*. To do t
 The associated example applications for this use case must be loaded onto their target devices.
 
 - The embedded application needs to be flashed on the OPTIGA™ Authenticate NBT Development Kit
-  - For flashing the PSoC™ microcontroller, it is recommended to use *ModusToolbox™*
+  - For flashing the PSOC™ microcontroller, it is recommended to use *ModusToolbox™*
 - The mobile phone app(s) need to be installed on the mobile phone
   - For installing Android applications, it is recommended to use *Android Studio*
   - For installing iOS applications, it is recommended to use *Xcode*
@@ -63,7 +63,7 @@ The associated example applications for this use case must be loaded onto their 
 
 The example applications showcase the *host parameterization via PT* use case by utilizing the OPTIGA™ Authenticate NBT's PT functionality to transfer data from an NFC-enabled mobile phone to the embedded host system via NFC/I2C.
 
-The use case is demonstrated with the simple example to parametrize the state of a LED on the OPTIGA™ Authenticate NBT Development Kit from the mobile phone app. Depending on the data sent by the Android application, the PSoC™'s LED is switched on or off.
+The use case is demonstrated with the simple example to parametrize the state of a LED on the OPTIGA™ Authenticate NBT Development Kit from the mobile phone app. Depending on the data sent by the Android application, the PSOC™'s LED is switched on or off.
 In synchronous *PT mode*, the data is instantaneously transferred between the OPTIGA™ Authenticate NBT's NFC and I2C interface.
 
 To evaluate the use case, follow these steps:
@@ -80,7 +80,7 @@ In *PT mode*, the OPTIGA™ Authenticate NBT acts as a synchronous NFC to I2C br
 
 To perform a synchronous data transfer via PT, the mobile phone initiates an NFC communication, selects a proprietary application on the host system (that is not present on the OPTIGA™ Authenticate NBT's T4T Application itself), and follows the proprietary application-specific protocol.
 
-The following figure depicts the command flow of a synchronous data transfer. In the figure, it is shown how the host application is selected by a mobile phone. At this point the user can continue with further interactions like a host configuration. 
+The following figure depicts the command flow of a synchronous data transfer. In the figure, it is shown how the host application is selected by a mobile phone. At this point the user can continue with further interactions like a host configuration.
 This Android application is a very simple host configuration example, turning an LED on or off on the host board.
 
 ![Pass-Through Data Transfer](./docs/images/nbt_flow_pt.png)
@@ -89,7 +89,7 @@ This Android application is a very simple host configuration example, turning an
 
 The GUI enables the user to interact with the Android application. In this particular use case, the user can enable or disable an LED on a host board using the OPTIGA™ Authenticate NBT in the *PT mode*.
 
-To demonstrate a potential synchronous data transfer, this example is sending an on/off command to control a LED on the [PSoC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439).
+To demonstrate a potential synchronous data transfer, this example is sending an on/off command to control a LED on the [PSOC™ 62S2 Wi-Fi Bluetooth® Prototyping Kit](https://www.infineon.com/CY8CPROTO-062S2-43439).
 
 The user can enable or disable the LED using the *Disable LED / Enable LED* button in the middle of the GUI. To transfer the selected setting, the OPTIGA™ Authenticate NBT needs to be tapped to the mobile phone to initiate the data exchange.
 
@@ -125,4 +125,7 @@ In case of questions regarding this repository and its contents, refer to [MAINT
 
 Please see our [LICENSE](LICENSE) for copyright and license information.
 
-This project follows the [REUSE](https://reuse.software/) approach, so copyright and licensing information is available for every file (including third party components) either in the file header, an individual *.license file or the .reuse/dep5 file. All licenses can be found in the [LICENSES](LICENSES) folder.
+This project follows the [REUSE](https://reuse.software/) approach, so copyright and licensing
+information is available for every file (including third party components) either in the file
+header, an individual *.license file or the [REUSE.toml](REUSE.toml) file. All licenses can be found in the
+[LICENSES](LICENSES) folder.
