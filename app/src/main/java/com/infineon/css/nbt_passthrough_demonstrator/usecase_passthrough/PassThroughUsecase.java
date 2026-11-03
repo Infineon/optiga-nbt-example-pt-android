@@ -95,4 +95,3 @@ public class PassThroughUsecase {
         return new ApduCommand(cla, ins, p1, p2, null, le);
     }
 }
-

@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024-2026 Infineon Technologies AG
+# SPDX-License-Identifier: CC0-1.0
+
+# EditorConfig settings of the host software projects, see https://editorconfig.org.
+# The project's own sections follow the last line of the common part.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{md,json,yml,yaml}]
+indent_size = 2
+
+# git writes .gitmodules with tabs, the projects keep it with four spaces
+[.gitmodules]
+indent_style = space
+indent_size = 4
+
+[LICENSES/**]
+charset = unset
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
+
+# project specific sections below

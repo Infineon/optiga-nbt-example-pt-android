@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Infineon Technologies AG
+# SPDX-License-Identifier: MIT
+
+name: Link check
+on: [push, pull_request]
+jobs:
+  links:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/checkout@v6
+    - name: Check links in Markdown files
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: --no-progress --exclude-path LICENSES --exclude-path app/libs '**/*.md'
+        fail: true

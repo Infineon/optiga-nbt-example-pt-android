@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024-2026 Infineon Technologies AG
+# SPDX-License-Identifier: CC0-1.0
+
+[submodule "app/libs/optiga-nbt-lib-java"]
+    path = app/libs/optiga-nbt-lib-java
+    url = https://github.com/Infineon/optiga-nbt-lib-java.git
